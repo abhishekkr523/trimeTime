@@ -1,0 +1,20 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(145deg, #100024, #1b0035) !important;
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.btn {
+  min-width: 150px;
+}
