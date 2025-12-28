@@ -1,4 +1,10 @@
 <?php
+include_once __DIR__ . '/../controllers/BarberServiceController.php';
+include_once __DIR__ . '/../controllers/BarberServiceController.php';
+include_once __DIR__ . '/../controllers/BarberServiceController.php';
+?>
+
+<?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'barber') {
     header("Location: ../auth/login.php");
@@ -124,7 +130,7 @@ include '../views/includes/navbar.php';
     <h2>My Services</h2>
 
     <!-- Add Service Form -->
-    <form action="../controllers/BarberServiceController.php" method="POST" class="form-inline-group">
+    <form action="" method="POST" class="form-inline-group">
         <input type="hidden" name="barber_id" value="<?= $barber_id ?>">
         <input type="text" name="service_name" placeholder="Service Name" required class="form-control">
         <input type="number" step="0.01" name="price" placeholder="Price (₹)" required class="form-control">
@@ -147,7 +153,7 @@ include '../views/includes/navbar.php';
                     <td><?= number_format($service['price'], 2) ?></td>
                     <td>
                         <!-- Update Form -->
-                        <form action="../controllers/BarberServiceController.php" method="POST" class="form-inline-group mb-2">
+                        <form action="" method="POST" class="form-inline-group mb-2">
                             <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
                             <input type="text" name="service_name" value="<?= $service['service_name'] ?>" class="form-control" required>
                             <input type="number" step="0.01" name="price" value="<?= $service['price'] ?>" class="form-control" required>
@@ -155,7 +161,7 @@ include '../views/includes/navbar.php';
                         </form>
 
                         <!-- Delete Form -->
-                        <form action="../controllers/BarberServiceController.php" method="POST" onsubmit="return confirm('Delete this service?')" class="d-inline">
+                        <form action="" method="POST" onsubmit="return confirm('Delete this service?')" class="d-inline">
                             <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
                             <button type="submit" name="delete_service" class="btn btn-danger btn-sm">Delete</button>
                         </form>

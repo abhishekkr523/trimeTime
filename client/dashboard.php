@@ -1,5 +1,7 @@
 <?php
-session_start();
+include_once __DIR__ . '/../controllers/FavoriteController.php';
+?>
+<?php
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'client') {
     header("Location: ../auth/login.php");
     exit;
@@ -129,7 +131,7 @@ include '../views/includes/navbar.php';
                         </ul>
 
                         <!-- Favorite Toggle -->
-                        <form action="../controllers/FavoriteController.php" method="POST">
+                        <form action="" method="POST">
                             <input type="hidden" name="barber_id" value="<?= $barber['id'] ?>">
                             <button type="submit" name="toggle_favorite" class="btn btn-outline-warning btn-sm">
                                 <?= isset($favBarberIds[$barber['id']]) ? '★ Unfavorite' : '☆ Favorite' ?>

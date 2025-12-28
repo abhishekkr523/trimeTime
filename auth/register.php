@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/../controllers/AuthController.php';
+?>
 <?php include '../views/includes/header.php'; ?>
 <?php include '../views/includes/navbar.php'; ?>
 
@@ -72,7 +75,7 @@
 </style>
 <div class="glass-card">
     <h2>Barber Registration</h2>
-    <form action="../controllers/AuthController.php" method="POST">
+    <form action="" method="POST">
         <div class="mb-3">
             <label class="form-label">Register As</label>
             <select name="role" class="form-control" required>

@@ -1,4 +1,10 @@
 <?php
+include_once __DIR__ . '/../controllers/AppointmentController.php';
+include_once __DIR__ . '/../controllers/AppointmentController.php';
+include_once __DIR__ . '/../controllers/AppointmentController.php';
+?>
+
+<?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'barber') {
     header("Location: ../auth/login.php");
@@ -147,16 +153,16 @@ include '../views/includes/navbar.php';
                             </td>
                             <td>
                                 <?php if ($appointment['status'] === 'pending'): ?>
-                                    <form action="../controllers/AppointmentController.php" method="POST" style="display:inline;">
+                                    <form action="" method="POST" style="display:inline;">
                                         <input type="hidden" name="appointment_id" value="<?= $appointment['id'] ?>">
                                         <button name="approve_appointment" class="btn btn-sm btn-success" onclick="return confirm('Approve this appointment?');">Approve</button>
                                     </form>
-                                    <form action="../controllers/AppointmentController.php" method="POST" style="display:inline;">
+                                    <form action="" method="POST" style="display:inline;">
                                         <input type="hidden" name="appointment_id" value="<?= $appointment['id'] ?>">
                                         <button name="cancel_appointment_by_barber" class="btn btn-sm btn-danger" onclick="return confirm('Cancel this appointment?');">Cancel</button>
                                     </form>
                                 <?php elseif ($appointment['status'] === 'approved'): ?>
-                                    <form action="../controllers/AppointmentController.php" method="POST" style="display:inline;">
+                                    <form action="" method="POST" style="display:inline;">
                                         <input type="hidden" name="appointment_id" value="<?= $appointment['id'] ?>">
                                         <button name="complete_appointment" class="btn btn-sm btn-primary" onclick="return confirm('Mark this appointment as completed?');">Complete</button>
                                     </form>

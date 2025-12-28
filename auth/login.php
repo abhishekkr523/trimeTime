@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/../controllers/AuthController.php';
+?>
 <?php include '../views/includes/header.php'; ?>
 <?php include '../views/includes/navbar.php'; ?>
 
@@ -77,7 +80,7 @@
 <!-- 💫 Glassmorphism Login Card -->
 <div class="glass-card">
     <h2>Login to Celebigo</h2>
-    <form action="../controllers/AuthController.php" method="POST">
+    <form action="" method="POST">
         <div class="mb-3">
             <label for="email" class="form-label">Email Address</label>
             <input type="email" class="form-control" name="email" placeholder="you@example.com" required>

@@ -1,4 +1,8 @@
 <?php
+include_once __DIR__ . '/../controllers/BarberController.php';
+?>
+
+<?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'barber') {
     header("Location: ../auth/login.php");
@@ -100,7 +104,7 @@ include '../views/includes/navbar.php';
 
 <div class="profile-container">
     <h2>Barber Profile Setup</h2>
-    <form action="../controllers/BarberController.php" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="barber_id" value="<?= $user_id ?>">
 
         <div class="mb-3">

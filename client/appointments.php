@@ -1,4 +1,8 @@
 <?php
+include_once __DIR__ . '/../controllers/AppointmentController.php';
+?>
+
+<?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'client') {
     header("Location: ../auth/login.php");
@@ -142,7 +146,7 @@ include '../views/includes/navbar.php';
                             </td>
                             <td>
                                 <?php if ($appointment['status'] === 'pending'): ?>
-                                    <form method="POST" action="../controllers/AppointmentController.php" style="display:inline;">
+                                    <form method="POST" action="" style="display:inline;">
                                         <input type="hidden" name="appointment_id" value="<?= $appointment['id'] ?>">
                                         <button type="submit" name="cancel_appointment" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this appointment?');">
                                             Cancel

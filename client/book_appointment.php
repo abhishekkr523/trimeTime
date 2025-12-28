@@ -1,4 +1,7 @@
 <?php
+include_once __DIR__ . '/../controllers/AppointmentController.php';
+?>
+<?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'client') {
     header("Location: ../auth/login.php");
@@ -119,7 +122,7 @@ include '../views/includes/navbar.php';
     </form>
 
     <?php if (!empty($services)): ?>
-        <form action="../controllers/AppointmentController.php" method="POST">
+        <form action="" method="POST">
             <input type="hidden" name="barber_id" value="<?= $_GET['barber_id'] ?>">
             <input type="hidden" name="client_id" value="<?= $_SESSION['user_id'] ?>">
 

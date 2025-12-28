@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/../../config/constants.php';
+
+?>
+
 <!-- Font + Optional Icon CDN -->
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
@@ -51,7 +56,7 @@
 
 <nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/barber-booking/index.php">TrimTime</a>
+    <a class="navbar-brand" href="<?= BASE_URL ?>/index.php">TrimTime</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -59,20 +64,21 @@
     <div class="collapse navbar-collapse" id="navbarContent">
       <ul class="navbar-nav ms-auto align-items-lg-center text-center">
         <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'barber'): ?>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/barber/dashboard.php">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/barber/profile.php">My Profile</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/barber/services.php">My Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/barber/appointments.php">Appointments</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/auth/logout.php">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/barber/dashboard.php">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/barber/profile.php">My Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/barber/services.php">My Services</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/barber/appointments.php">Appointments</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/auth/logout.php">Logout</a></li>
 
         <?php elseif (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'client'): ?>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/client/book_appointment.php">Book Appointment</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/client/appointments.php">My Appointments</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/auth/logout.php">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/client/book_appointment.php">Book Appointment</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/client/appointments.php">My Appointments</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/auth/logout.php">Logout</a></li>
 
         <?php else: ?>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/auth/login.php">Login</a></li>
-          <li class="nav-item"><a class="nav-link" href="/barber-booking/auth/register.php">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/auth/login.php">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>/auth/register.php">Sign Up</a></li>
         <?php endif; ?>
       </ul>
     </div>
